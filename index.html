@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=0;">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset='utf-8'> 
+<head>
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- META ===================================================== --> 
+    <title>Responsive Tables Demo</title> 
+    <meta name="description" content="A method for responsive tables"> 
+
+<!-- Favicon  ========================================== --> 
+	<link rel="icon" href="favicon.ico">
+
+<!-- CSS ====================================================== --> 
+	<link rel="stylesheet" href="css/responsivetables.css">
+	<!-- Demo CSS (don't use) -->
+	<style type="text/css">
+		body, html {
+			padding:0px;
+			margin:0px;
+			background: #fff;
+			line-height: 1.4em;
+		}
+		.page{
+			padding: 5px 30px 30px 30px;
+			max-width: 800px;
+			margin: 0 auto;
+			font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+		}
+		a:link,
+		a:visited {
+			color:#5BC9B7;
+		}
+		h1 {
+			line-height: 1.2em;
+		}
+		a:hover {
+			color:#449a8c;
+		}
+		pre {
+			background: #333;
+			padding: 10px;
+			overflow: auto;
+			color: #BBB7A9;
+			}
+		#hub {
+			text-decoration: none;
+			color: #5BC9B7;
+			border: 2px solid #5BC9B7;
+			padding: 6px 10px;
+			display: inline-block;
+			font-size: 18px;
+		}
+		#hub:hover {
+			background:#5BC9B7;
+			color:#fff;
+		}
+		.demo {
+			text-align: center;
+			padding:30px 0
+		}
+		table {
+			border-width: 1px;
+			border-spacing: 0px;
+			border-style: none;
+			border-color: gray;
+			border-collapse: collapse;
+			font-size: 12px;
+			width:100%;
+		}
+		th {
+			background:#ddd;
+			color:#222;
+			padding:10px;
+			text-align:left;
+			border:1px solid #ccc;
+		}
+		td {
+			padding:10px;
+			border:1px solid #ccc;
+		}
+		tr:nth-child(2n) {
+			background:#eaeaea;
+		}
+	</style>
+
+</head>
+<body>
+<br>
+<div class="page">
+<h1>Responsive Tables</h1>
+A quick and easy solution to responsive tables
+<br><br>
+<h2>Demo</h2>
+(resize this page)<br><br>
+<table class="rwd-table">
+  <tr>
+    <th>Resize Me</th>
+    <th>To See</th>
+    <th>This Plugin</th>
+    <th>Working</th>
+  </tr>
+  <tr>
+    <td>Entry First Line 1</td>
+    <td>Entry First Line 2</td>
+    <td>Entry First Line 3</td>
+    <td>Entry First Line 4</td>
+  </tr>
+  <tr>
+    <td>Entry Line 1</td>
+    <td>Entry Line 2</td>
+    <td>Entry Line 3</td>
+    <td>Entry Line 4</td>
+  </tr>
+  <tr>
+    <td>Entry Line 1</td>
+    <td>Entry Line 2</td>
+    <td>Entry Line 3</td>
+    <td>Entry Line 4</td>
+  </tr>
+  <tr>
+    <td>Entry Line 1</td>
+    <td>Entry Line 2</td>
+    <td>Entry Line 3</td>
+    <td>Entry Line 4</td>
+  </tr>
+  <tr>
+    <td>Entry Last Line 1</td>
+    <td>Entry Last Line 2</td>
+    <td>Entry Last Line 3</td>
+    <td>Supercalafragalisticexpialadocious</td>
+  </tr>
+</table>
+
+<h2>Help</h2>
+<a href="http://kthornbloom.com/responsivetables.php" id="hub">Usage & Info</a>
+<a href="https://github.com/kthornbloom/Responsive_Tables" id="hub">Download</a>
+</div><br>
+<!-- JS ======================================================= --> 
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+	<script type="text/javascript" src="js/responsivetables.min.js"></script>
+	<script type="text/javascript">
+	$(window).load( function() {
+		$(document).responsiveTables({
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+
+.responsive-table{
+    overflow:hidden;
+    border-bottom:0;
+} 
+
+.table-hider {
+    overflow:hidden;
+    padding-right:1px;
+}
+.viewtable {
+    display:block;
+    border: 2px solid #5BC9B7;
+    color: #5BC9B7!important;
+    text-align:center;
+    padding:10px;
+    text-decoration:none;
+}
+.viewtable:hover {
+    background:#5BC9B7;
+    color:#fff!important;
+}

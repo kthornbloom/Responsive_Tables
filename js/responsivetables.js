@@ -9,45 +9,54 @@
 
 (function ($) {
     $.fn.extend({
-        responsiveTables: function (options) {
+        responsiveTables: function () {
 
-            var defaults = {
-                borderColor: '#ccc',
-                fontSize: '12px'
-            }
-
-            var options = $.extend(defaults, options);
-
-             // Add markup
-            $('.rwd-table').wrap('<div class="responsive-table"><div class="table-hider"></div></div>');
-            $('.responsive-table').append('<a href="#" class="viewtable" style="display:none">View This Table</a>');
+             // Add wrapper to tables, this helps us know if they're getting too big
+            $('.rwd-table').wrap('<div class="rt-wrap"></div>');
 
             // Check if table is too big for viewport. 
             function tableChecker() {
                 $(".rwd-table").each(function () {
+                        // wrapper width (page width)
                     var wrapWidth1 = parseInt($(this).parent().width(), 10),
-                        tableWidth = parseInt($(this).outerWidth(), 10);
-                    $('#bug').html(wrapWidth1 +' '+tableWidth);
+                        // table width
+                        tableWidth = parseInt($(this).outerWidth(), 10),
+                        // If we've already gone mobile, let's save the breakpoint at which it happened
+                        breakpoint = $(this).parent().find('.rt-breakpoint').html();
+
+                    // Table is too big!
                     if (wrapWidth1 < tableWidth) {
-                        $(this).parent().next('.viewtable').show();
-                        $(this).parent().css('height','0px');
-                    } else {
-                        $(this).parent().css('height','auto');
-                        $(this).parent().next('.viewtable').hide();
+                        $(this).parent().prepend("<div class='rt-breakpoint'>"+tableWidth+"</div>");
+                        $(this).find('td, th, tr').css({
+                            'display': 'block',
+                            'padding': '5px',
+                            'text-align': 'left',
+                            'white-space': 'normal'
+                        });
+                        $(this).find('tr').css({                            
+                            'background':'none',
+                            'margin-bottom': '20px',
+                            'padding':'0'
+                        });
+                        $(this).find('thead').css('display','none');
+                        $(this).find('td, th').addClass('cellResize');
+                    // Ok, there's enough room for the table again. Let's put it back.
+                    } else if (breakpoint < tableWidth) {
+                        $(this).find('td, th, tr').css({
+                            'display': '',
+                            'padding': '',
+                            'text-align': '',
+                            'white-space': '',
+                            'background':'',
+                            'padding':'',
+                            'margin':''
+                        });
+                        $(this).find('thead').css('display','');
+                        $(this).find('.cellResize').removeClass();
+                        $(this).parent().find('.rt-breakpoint').remove();
                     }
                 });
             }
-
-
-            // Clicking button saves table, and opens in new window
-            $(document.body).on('click', '.viewtable', function (event) {
-                var w = window.open(),
-                    saveTable = $(this).parent().find('table').html(),    
-                    send = '<table border="1" cellPadding="5" cellSpacing="0" style="font-family:sans-serif; border-collapse:collapse; border:1px solid ' + options.borderColor + '; font-size:' + options.fontSize + '">' + saveTable + '</table>';
-                $(w.document.body).html(send);
-                w.document.title = 'Table View';
-
-            });
 
             // Call on page load and page resize
             tableChecker();

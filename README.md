@@ -1,5 +1,5 @@
 #Responsive Tables
-A little JS & CSS that actively checks your tables to see if they're too big. If so, it displays them inline. No more randomly setting breakpoints that don't cover all of your tables!
+A great way to deal with responsive tables is to reformat the related information cells into grouped blocks in mobile view, like <a href="http://blog.apps.npr.org/2014/05/09/responsive-data-tables.html" target="_blank">these guys did</a>. The problem is that you have to set a media query to initiate this change, lets say at 400px. What if your table breaks before you get there? What if your table displays just fine under 400px? This little jQuery plugin detects when your table breaks, and only applies the 'fix' when that happens.
 
 
 ##Demo
@@ -12,12 +12,12 @@ Include the css, or just add it into your own stylesheet:
 ```
 Make sure to include and call the script after loading jQuery at the end of the page:
 ```
-        <script type="text/javascript" src="js/responsivetables.min.js"></script>
-        <script type="text/javascript">
-        $(window).load( function() {
-                $(document).responsiveTables({
-            });
-        });
+<script type="text/javascript" src="js/responsivetables.min.js"></script>
+<script type="text/javascript">
+$(window).load( function() {
+        $(document).responsiveTables({
+    });
+});
 ```
 Add a class of "rwd-table" to the tables you'd like to be responsive. Add data-title attributes to your table cells if you'd like them to have a title in mobile mode. It should look something like this:
 ```

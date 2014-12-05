@@ -4,7 +4,18 @@
 .rt-wrap{
     overflow:hidden;
     border-bottom:0;
-} 
+}
+.rt-alt {
+	display:block;
+	padding:5px;
+	text-align:left;
+	white-space:normal;
+}
+.re-alt2 {
+	background:none;
+	margin-bottom:20px;
+	padding:0;
+}
 .cellResize[data-title]:before {
     content: attr(data-title) ":\00A0";
         font-weight: bold;

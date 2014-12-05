@@ -5,7 +5,7 @@ A great way to deal with responsive tables is to reformat the related informatio
 ##Demo
 <a href="http://kthornbloom.com/responsivetables" target="_blank">Open demo in new window</a>
 
-##Usage & Info
+##Usage
 Include the css, or just add it into your own stylesheet:
 ```
 <link rel="stylesheet" href="css/responsivetables.css">
@@ -15,11 +15,10 @@ Make sure to include and call the script after loading jQuery at the end of the 
 <script type="text/javascript" src="js/responsivetables.min.js"></script>
 <script type="text/javascript">
 $(window).load( function() {
-        $(document).responsiveTables({
-    });
+        $(document).responsiveTables();
 });
 ```
-Add a class of "rwd-table" to the tables you'd like to be responsive. Add data-title attributes to your table cells if you'd like them to have a title in mobile mode. It should look something like this:
+Add a class of "rwd-table" to the tables you'd like to be responsive. If you want titles on each cell in mobile view, make sure to give the table a heading.
 ```
 <table class="rwd-table">
 	<thead>
@@ -31,13 +30,15 @@ Add a class of "rwd-table" to the tables you'd like to be responsive. Add data-t
 	  </tr>
   </thead>
   <tr>
-    <td data-title="Date">12.21.15</td>
-    <td data-title="Title">Event Title</td>
-    <td data-title="Room">Room 3b</td>
-    <td data-title="Time">12:30PM </td>
+    <td>12.21.15</td>
+    <td>Event Title</td>
+    <td>Room 3b</td>
+    <td>12:30PM </td>
   </tr>
 </table>
 ```
+##How It Works
+This script puts a wrapper div around the table. On page load or resize, it checks the width of the table VS the width of the wrapper div. If the table width exceeds its wrapper, the plugin goes into action. It will first check to see if your table has a heading. If so, it uses that information to set data attributes on each cell. Then it reformats the table for mobile view, and uses those data attributes to apply your heading titles to each cell (if applicable). It's also worth noting that the plugin uses a delayed method of checking window resizes by <a href="http://www.paulirish.com/2009/throttled-smartresize-jquery-event-handler/ target="_blank">Paul Irish</a> to increase performance. 
 
 ##Help & Feedback
 Connect with me on <a href="https://twitter.com/kthornbloom" target="_blank">twitter.</a>

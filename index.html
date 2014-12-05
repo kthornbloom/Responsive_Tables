@@ -86,7 +86,7 @@
 <br>
 <div class="page">
 <h1>Responsive Tables</h1>
-A little JS & CSS that actively checks your tables to see if they're too big. If so, it displays them inline. No more randomly setting breakpoints that don't cover all of your tables!
+A great way to deal with responsive tables is to change the related information cells into grouped blocks in mobile view, like <a href="http://blog.apps.npr.org/2014/05/09/responsive-data-tables.html" target="_blank">these guys did</a>. The problem is that you have to set a media query to initiate this change, lets say at 400px. What if your table breaks before you get there? What if your table displays just fine under 400px? This little jQuery plugin detects when your table breaks, and only applies the 'fix' when that happens.
 
 <br><br>
 <h2>Demo</h2>
@@ -115,28 +115,16 @@ A little JS & CSS that actively checks your tables to see if they're too big. If
 	  </tr>
   </thead>
   <tr>
-    <td data-title="Date">12.21.15</td>
-    <td data-title="Title">Event Title</td>
-    <td data-title="Room">Room 3b</td>
-    <td data-title="Time">12:30PM </td>
+    <td>12.21.15</td>
+    <td>Event Title</td>
+    <td>Room 3b</td>
+    <td>12:30PM </td>
   </tr>
   <tr>
-    <td data-title="Date">12.21.15</td>
-    <td data-title="Title">Event Title</td>
-    <td data-title="Room">Room 3b</td>
-    <td data-title="Time">12:30PM </td>
-  </tr>
-  <tr>
-    <td data-title="Date">12.21.15</td>
-    <td data-title="Title">Event Title</td>
-    <td data-title="Room">Room 3b</td>
-    <td data-title="Time">12:30PM </td>
-  </tr>
-  <tr>
-    <td data-title="Date">12.21.15</td>
-    <td data-title="Title">Event Title</td>
-    <td data-title="Room">Room 3b</td>
-    <td data-title="Time">12:30PM asdfsdfasdfsdfasdfasdfasdfasdf</td>
+    <td>12.21.15</td>
+    <td>Event Title</td>
+    <td>Room 3b</td>
+    <td>12:30PM asdfsdfasdfsdfasdfasdfasdfasdf</td>
   </tr>
 </table>
 </table>
@@ -145,11 +133,10 @@ A little JS & CSS that actively checks your tables to see if they're too big. If
 </div><br>
 <!-- JS ======================================================= --> 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
-<script type="text/javascript" src="js/responsivetables.min.js"></script>
+<script type="text/javascript" src="js/responsivetables.js"></script>
 <script type="text/javascript">
 	$(window).load( function() {
-		$(document).responsiveTables({
-		});
+		$(document).responsiveTables();
 	});
 </script>
 </body>

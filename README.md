@@ -17,6 +17,7 @@ Make sure to include and call the script after loading jQuery at the end of the 
 $(window).load( function() {
         $(document).responsiveTables();
 });
+</script>
 ```
 Add a class of "rwd-table" to the tables you'd like to be responsive. If you want titles on each cell in mobile view, make sure to give the table a heading.
 ```

@@ -44,7 +44,7 @@
 						$(this).find('thead').css('display', 'none');
 						$(this).find('td, th').addClass('cellResize');
 						// Ok, there's enough room for the table again. Let's put it back.
-					} else if (breakpoint < tableWidth) {
+					} else if (breakpoint < wrapWidth1) {
 						$(this).find('td, th, tr').removeClass('rt-alt').removeClass('rt-alt2');
 						$(this).find('thead').css('display', '');
 						$(this).find('.cellResize').removeClass();

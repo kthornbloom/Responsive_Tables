@@ -41,5 +41,8 @@ Add a class of "rwd-table" to the tables you'd like to be responsive. If you wan
 ##How It Works
 This script puts a wrapper div around the table. On page load or resize, it checks the width of the table VS the width of the wrapper div. If the table width exceeds its wrapper, the plugin goes into action. It will first check to see if your table has a heading. If so, it uses that information to set data attributes on each cell. Then it reformats the table for mobile view, and uses those data attributes to apply your heading titles to each cell (if applicable). It's also worth noting that the plugin uses a delayed method of checking window resizes by <a href="http://www.paulirish.com/2009/throttled-smartresize-jquery-event-handler/ target="_blank">Paul Irish</a> to increase performance. 
 
+##Known Issues
+- Does not work if your table is within another table, or an element with display:table-cell set.
+
 ##Help & Feedback
 Connect with me on <a href="https://twitter.com/kthornbloom" target="_blank">twitter.</a>

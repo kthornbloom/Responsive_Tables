@@ -1,21 +1,24 @@
 .rt-breakpoint {
-    display:none;
+	display: none;
 }
-.rt-wrap{
-    overflow:hidden;
-    border-bottom:0;
+
+.mobile-table {
+	border:1px solid #ccc;
 }
-.rt-alt {
-	display:block;
-	text-align:left;
-	white-space:normal;
+
+.mobile-table thead {
+	display: none;
 }
-.re-alt2 {
-	background:none;
-	margin-bottom:20px;
-	padding:0;
+
+.mobile-table tr,
+.mobile-table td {
+	display: block;
+	box-sizing: border-box;
+	width:100%!important;
+	border:none;
 }
-.cellResize[data-title]:before {
+
+.mobile-table td[data-title]:before {
     content: attr(data-title) ":\00A0";
         font-weight: bold;
 }

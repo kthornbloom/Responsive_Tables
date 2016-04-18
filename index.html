@@ -2,20 +2,20 @@
 <html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta charset='utf-8'> 
+<meta charset='utf-8'>
 <head>
 <!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
-<!-- META ===================================================== --> 
-    <title>Responsive Tables Demo</title> 
-    <meta name="description" content="A method for responsive tables"> 
+<!-- META ===================================================== -->
+    <title>Responsive Tables Demo</title>
+    <meta name="description" content="A method for responsive tables">
 
-<!-- Favicon  ========================================== --> 
+<!-- Favicon  ========================================== -->
 	<link rel="icon" href="favicon.ico">
 
-<!-- CSS ====================================================== --> 
+<!-- CSS ====================================================== -->
 	<link rel="stylesheet" href="css/responsivetables.css">
 	<!-- Demo CSS (don't use) -->
 	<style type="text/css">
@@ -86,9 +86,7 @@
 <br>
 <div class="page">
 <h1>Responsive Tables</h1>
-A great way to deal with responsive tables is to change the related information cells into grouped blocks in mobile view, like <a href="http://blog.apps.npr.org/2014/05/09/responsive-data-tables.html" target="_blank">these guys did</a>. The problem is that you have to set a media query to initiate this change, lets say at 400px. What if your table breaks before you get there? What if your table displays just fine under 400px? This little jQuery plugin detects when your table breaks, and only applies the 'fix' when that happens.
 
-<br><br>
 <h2>Demo</h2>
 (resize this page)<br><br>
 
@@ -105,13 +103,14 @@ A great way to deal with responsive tables is to change the related information 
 </table>
 
 <h3>Wider Table</h3>
-<table class="rwd-table">
+<table class="rwd-table" data-autogen-headers="true">
 	<thead>
 	  <tr>
 	    <th>Date</th>
 	    <th>Title</th>
 	    <th>Room</th>
 	    <th>Time</th>
+		<th>Description</th>
 	  </tr>
   </thead>
   <tr>
@@ -119,19 +118,47 @@ A great way to deal with responsive tables is to change the related information 
     <td>Event Title</td>
     <td>Room 3b</td>
     <td>12:30PM </td>
+	<td>Lorem ipsum dolor sit amet. LongWordLongWordLong</td>
   </tr>
   <tr>
     <td>12.21.15</td>
     <td>Event Title</td>
     <td>Room 3b</td>
-    <td>12:30PM supercalifragalisticexpialadocious</td>
+    <td>12:30PM </td>
+	<td>Lorem ipsum dolor sit amet.</td>
   </tr>
 </table>
+
+<h3>Wider Table</h3>
+<table class="rwd-table">
+	<thead>
+	  <tr>
+	    <th>Date</th>
+	    <th>Title</th>
+	    <th>Room</th>
+	    <th>Time</th>
+		<th>Description</th>
+	  </tr>
+  </thead>
+  <tr>
+    <td>12.21.15</td>
+    <td data-title="Event">Event Title</td>
+    <td>Room 3b</td>
+    <td>12:30PM </td>
+	<td>Lorem ipsum dolor sit amet. LongWordLongWordLongWord</td>
+  </tr>
+  <tr>
+    <td>12.21.15</td>
+    <td>Event Title</td>
+    <td>Room 3b</td>
+    <td>12:30PM </td>
+	<td>Lorem ipsum dolor sit amet.</td>
+  </tr>
 </table>
 <br>
 <a href="https://github.com/kthornbloom/Responsive_Tables" class="button">Download & Docs</a>
 </div><br>
-<!-- JS ======================================================= --> 
+<!-- JS ======================================================= -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
 <script type="text/javascript" src="js/responsivetables.js"></script>
 <script type="text/javascript">

@@ -1,5 +1,5 @@
 /*
- * Responsive Tables
+ * Responsive Tables V1.0.0
  * http://kthornbloom.com/responsivetables.php
  *
  * Copyright 2013, Kevin Thornbloom
@@ -16,9 +16,11 @@
 
 			// Does the table have a heading?
 			$('.rwd-table').each(function() {
-				if ($('thead', this).length) {
+				var autogen = $(this).attr("data-autogen-headers");
+				console.log(autogen);
+				if ($('thead', this).length && autogen == "true") {
 					// If so, create data-attributes for each cell based on the heading
-					$('thead th', this).each(function() {
+					$('thead tr:first th', this).each(function() {
 						saveTitle = $(this).text(),
 						whichPosition = $(this).index()+1;
 						$(this).parents('table').find('tr td:nth-child('+whichPosition+')').attr('data-title', saveTitle);
@@ -26,7 +28,7 @@
 				}
 			});
 
-			// Check if table is too big for viewport. 
+			// Check if table is too big for viewport.
 			function tableChecker() {
 				$(".rwd-table").each(function() {
 					// wrapper width (page width)
@@ -36,19 +38,15 @@
 						// If we've already gone mobile, let's save the breakpoint at which it happened
 						breakpoint = $(this).parent().find('.rt-breakpoint').html();
 
-					// Table is too big!
+
 					if (wrapWidth1 < tableWidth) {
+						// Table is too big!
 						$(this).parent().prepend("<div class='rt-breakpoint'>" + tableWidth + "</div>");
-						$(this).find('td, th, tr').addClass('rt-alt');
-						$(this).find('tr').addClass('rt-alt2');
-						$(this).find('thead').css('display', 'none');
-						$(this).find('td, th').addClass('cellResize');
-						// Ok, there's enough room for the table again. Let's put it back.
+						$(this).addClass('mobile-table');
 					} else if (breakpoint < wrapWidth1) {
-						$(this).find('td, th, tr').removeClass('rt-alt').removeClass('rt-alt2');
-						$(this).find('thead').css('display', '');
-						$(this).find('.cellResize').removeClass();
+						// Ok, there's enough room for the table again. Let's put it back.
 						$(this).parent().find('.rt-breakpoint').remove();
+						$(this).removeClass('mobile-table');
 					}
 				});
 			}
@@ -78,7 +76,7 @@
 							timeout = setTimeout(delayed, threshold || 100);
 						};
 					}
-					// smartresize 
+					// smartresize
 				jQuery.fn[sr] = function(fn) {
 					return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr);
 				};

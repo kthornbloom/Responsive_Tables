@@ -47,5 +47,3 @@ This script puts a wrapper div around the table. On page load or resize, it chec
 ##Known Issues
 - Does not work if your table is within another table, or an element with display:table-cell set.
 
-##Help & Feedback
-Connect with me on <a href="https://twitter.com/kthornbloom" target="_blank">twitter.</a>
